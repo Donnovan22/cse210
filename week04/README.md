@@ -1,9 +1,11 @@
-# Jumper
-Jumper is a game in which the player seeks to solve a puzzle by guessing the letters of a secret word one at a time. 
-If the guess is correct, the letter is revealed.
-If the guess is incorrect, a line is cut on the player's parachute.
-If the puzzle is solved the game is over.
-If the player has no more parachute the game is over.
+# Greed
+Greed is a game in which the player seeks to gather as many falling gems as possible. The game continues as long as the player wants more!
+Gems (*) and rocks (o) randomly appear and fall from the top of the screen.
+The player (#) can move left or right along the bottom of the screen.
+If the player touches a gem they earn a point.
+If the player touches a rock they lose a point.
+Gems and rocks are removed when the player touches them.
+The game continues until the player closes the window.
 
 ## Getting Started
 ---
@@ -13,15 +15,15 @@ browse to the project's root folder. Start the program by running the following 
 py main.py
 ```
 You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the 
-project folder. Select the main module(main.py) inside the "jumperGame" folder and click the "run" button.
+project folder. Select the main module(main.py) inside the "GreedGame" folder and click the "run" button.
 
 ## Project Structure
 ---
 The project files and folders are organized as follows:
 ```
-root (week03)           (project root folder)
-+-- jumperGame          (source code for game)
-  +-- classes              (specific classes)
+root (week04)           (project root folder)
++-- GreedGame           (source code for game)
+  +-- classes           (specific classes)
   +-- main.py           (program entry point)
 +-- README.md           (general info)
 ```
