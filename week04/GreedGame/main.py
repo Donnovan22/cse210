@@ -14,7 +14,7 @@ from classes.shared.color import Color
 from classes.shared.point import Point
 
 
-FRAME_RATE = 60
+FRAME_RATE = 35
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
