@@ -3,11 +3,9 @@ from classes.casting.actor import Actor
 
 class Score(Actor):
     """
-    A record of points made or lost. 
+    A record of points made. 
 
-    The responsibility of Score is to keep track of the points the player has earned by eating food.
-    It contains methods for adding and getting points. Client should use get_text() to get a string 
-    representation of the points earned.
+    The responsibility of Score is to add one point whether any player wins the game.
 
     Attributes:
         _points (int): The points earned in the game.
@@ -25,4 +23,4 @@ class Score(Actor):
             points (int): The points to add.
         """
         self._points += points
-        self.set_text(f"Score: {self._points}")
+        self.set_text(f"{self._points}")

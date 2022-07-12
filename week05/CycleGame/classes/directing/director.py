@@ -15,7 +15,7 @@ class Director:
         """
         self._video_service = video_service
 
-    def start_game(self, cast, cast2, script):
+    def start_game(self, cast, script):
         """Starts the game using the given cast and script. Runs the main game loop.
 
         Args:
@@ -24,12 +24,13 @@ class Director:
         """
         self._video_service.open_window()
         while self._video_service.is_window_open():
-            self._execute_actions("input", cast, cast2, script)
-            self._execute_actions("update", cast, cast2, script)
-            self._execute_actions("output", cast, cast2, script)
+            self._execute_actions("input", cast, script)
+            self._execute_actions("update", cast, script)
+            self._execute_actions("output", cast, script)
+            self._execute_actions("collision", cast, script)
         self._video_service.close_window()
 
-    def _execute_actions(self, group, cast, cast2, script):
+    def _execute_actions(self, group, cast, script):
         """Calls execute for each action in the given group.
 
         Args:
@@ -39,4 +40,4 @@ class Director:
         """
         actions = script.get_actions(group)
         for action in actions:
-            action.execute(cast, cast2, script)
+            action.execute(cast, script)

@@ -19,7 +19,7 @@ class DrawActorsAction(Action):
         """
         self._video_service = video_service
 
-    def execute(self, cast, cast2, script):
+    def execute(self, cast, script):
         """Executes the draw actors action.
 
         Args:
@@ -27,23 +27,25 @@ class DrawActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         score = cast.get_first_actor("scores")
-        #food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
-        segments = snake.get_segments()
+        cycle = cast.get_first_actor("cycles")
+        segments = cycle.get_segments()
         messages = cast.get_actors("messages")
+        actor = cast.get_first_actor("player")
 
-        score2 = cast2.get_first_actor("scores2")
-        snake2 = cast2.get_first_actor("snakes2")
-        segments2 = snake2.get_segments()
-        messages2 = cast2.get_actors("messages2")
+        score2 = cast.get_first_actor("scores2")
+        actor2 = cast.get_first_actor("player2")
+        cycle2 = cast.get_first_actor("cycles2")
+        segments2 = cycle2.get_segments()
+        messages2 = cast.get_actors("messages2")
 
         self._video_service.clear_buffer()
-        # self._video_service.draw_actor(food)
         self._video_service.draw_actors(segments)
         self._video_service.draw_actor(score)
+        self._video_service.draw_actor(actor)
         self._video_service.draw_actors(messages, True)
 
         self._video_service.draw_actors(segments2)
         self._video_service.draw_actor(score2)
+        self._video_service.draw_actor(actor2)
         self._video_service.draw_actors(messages2, True)
         self._video_service.flush_buffer()

@@ -9,7 +9,7 @@ class MoveActorsAction(Action):
     than zero.
     """
 
-    def execute(self, cast, cast2, script):
+    def execute(self, cast, script):
         """Executes the move actors action.
 
         Args:
@@ -19,7 +19,3 @@ class MoveActorsAction(Action):
         actors = cast.get_all_actors()
         for actor in actors:
             actor.move_next()
-
-        actors2 = cast2.get_all_actors()
-        for actor2 in actors2:
-            actor2.move_next()

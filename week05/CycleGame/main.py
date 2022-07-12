@@ -1,9 +1,11 @@
+from itertools import cycle
 import constants
 
+from classes.casting.actor import Actor
 from classes.casting.cast import Cast
 from classes.casting.food import Food
 from classes.casting.score import Score
-from classes.casting.snake import Snake
+from classes.casting.cycle import Cycle
 from classes.scripting.script import Script
 from classes.scripting.control_actors_action import ControlActorsAction
 from classes.scripting.move_actors_action import MoveActorsAction
@@ -20,19 +22,30 @@ def main():
 
     # create the cast
     cast = Cast()
-    #cast.add_actor("foods", Food())
-    snake = Snake(200, 300)
     score = Score()
-
-    cast.add_actor("snakes", snake)
-    cast.add_actor("scores", score)
-
-    cast2 = Cast()
     score2 = Score()
-    snake2 = Snake(600, 300)
-    score2.set_position(Point(800, 0))
-    cast2.add_actor("snakes2", snake2)
-    cast2.add_actor("scores2", score2)
+    actor = Score()
+    actor2 = Score()
+
+    # create labels for palyer one and player two
+    actor.set_text("Player One (Green) ( w, s, a, d ) : ")
+    actor2.set_text("Player Two (Red) ( i, j, k, l ) : ")
+
+    # setting the position of the labels
+    actor2.set_position(Point(630, 0))
+    score.set_position(Point(250, 0))
+    score2.set_position(Point(850, 0))
+
+    # Create the snakes
+    cycle = Cycle(300, 300, constants.GREEN, constants.GREEN)
+    cycle2 = Cycle(300, 300, constants.RED, constants.RED)
+
+    cast.add_actor("cycles", cycle)
+    cast.add_actor("cycles2", cycle2)
+    cast.add_actor("scores", score)
+    cast.add_actor("scores2", score2)
+    cast.add_actor("player", actor)
+    cast.add_actor("player2", actor2)
 
     # start the game
     keyboard_service = KeyboardService()
@@ -41,11 +54,11 @@ def main():
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
     script.add_action("update", MoveActorsAction())
-    #script.add_action("update", HandleCollisionsAction())
+    script.add_action("collision", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
 
     director = Director(video_service)
-    director.start_game(cast, cast2, script)
+    director.start_game(cast, script)
 
 
 if __name__ == "__main__":
