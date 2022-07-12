@@ -19,7 +19,7 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root (week05)           (project root folder)
-+-- CyleGame            (source code for game)
++-- CycleGame           (source code for game)
   +-- classes           (specific classes)
   +-- main.py           (program entry point)
 +-- README.md           (general info)
