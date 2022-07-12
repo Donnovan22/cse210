@@ -37,8 +37,8 @@ def main():
     score2.set_position(Point(850, 0))
 
     # Create the snakes
-    cycle = Cycle(300, 300, constants.GREEN, constants.GREEN)
-    cycle2 = Cycle(300, 300, constants.RED, constants.RED)
+    cycle = Cycle(250, 250, constants.GREEN, constants.GREEN)
+    cycle2 = Cycle(250, 250, constants.RED, constants.RED)
 
     cast.add_actor("cycles", cycle)
     cast.add_actor("cycles2", cycle2)
