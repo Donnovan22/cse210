@@ -91,7 +91,7 @@ class Director:
             text_game_over_2 = font_1.render(
                 "To Play Again", True, constants.WHITE)
 
-            self.screen.blit(text, [0, 0])
+            self.screen.blit(text, [10, 0])
             if self.game._state == "gameover":
                 self.screen.blit(text_game_over, [150, 300])
                 self.screen.blit(text_game_over_1, [150, 400])

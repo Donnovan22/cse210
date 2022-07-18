@@ -38,7 +38,7 @@ class Tetris:
             self.field.append(new_line)
 
     def new_figure(self):
-        """This method creates a new figure and position it at coordinates (3,0) which is the center of the field"""
+        """This method creates a new figure and position it at coordinates (5,0) which is the center of the field"""
 
         self.figure = Figure(Point(5, 0))
 

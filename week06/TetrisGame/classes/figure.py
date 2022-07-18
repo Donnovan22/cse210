@@ -20,7 +20,8 @@ class Figure:
         constants.RED,
         constants.GREEN,
         constants.PURPLE,
-        constants.BRONZE
+        constants.PINK,
+        constants.TURQUOISE
     ]
 
     # list of figures
