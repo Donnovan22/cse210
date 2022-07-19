@@ -44,7 +44,7 @@ class Director:
                     self.done = True
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_UP:
-                        self.game.rotate()
+                        self.game.rotate_figure()
                     if event.key == pygame.K_DOWN:
                         self.pressing_down = True
                     if event.key == pygame.K_LEFT:

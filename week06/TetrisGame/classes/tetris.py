@@ -79,16 +79,16 @@ class Tetris:
         while not self._intersects():
             self.figure._point._y += 1
         self.figure._point._y -= 1
-        self._freeze()
+        self._freeze_figure()
 
     def go_down(self):
         """This method makes the figure go down until it reaches the bottom of the field or some fixed figure"""
         self.figure._point._y += 1
         if self._intersects():
             self.figure._point._y -= 1
-            self._freeze()
+            self._freeze_figure()
 
-    def _freeze(self):
+    def _freeze_figure(self):
         """This method freezes the current figures if there is an Intersection, 
         and after freezing creates a new Figure, and if it already intersects, the game is over"""
 
@@ -109,7 +109,7 @@ class Tetris:
         if self._intersects():
             self.figure._point._x = old_x
 
-    def rotate(self):
+    def rotate_figure(self):
         """This method makes the figure rotate by pressing the up arrow key"""
         old_rotation = self.figure._rotation
         self.figure.rotate()
